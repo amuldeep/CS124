@@ -1,0 +1,113 @@
+\documentclass{ffslides}
+\usepackage{fancyvrb,pst-tree}
+\ffpage{31}{\numexpr 16/9}
+\begin{document}
+
+\blankpage
+\btext{.32}{.5}{.36}{
+LAB 6: MORSE CODE TREE
+BY:AMULDEEP DHILLON
+}
+
+\normalpage{Morse Code Lab}{
+The purpose of this lab is to explore techniques to build and search 
+binary trees. This is an efficient way to get the best properties
+of arrays and linked lists combined. In this case we will be using
+binary search tree to make a Morse Code translator.
+}
+\btext{.275}{.5}{.45}{This will allow us to search through data at greater
+efficieny with simplicity}
+
+\normalpage{Morse header File}{
+\VerbatimInput{Morse.h}
+}
+\btext{.5}{.1}{.13}{Contains class for:\\
+\qi{Morse}
+\qi{Tnode}
+and shared variables}
+
+
+\normalpage{Telegraph header file}{
+\VerbatimInput{Telegraph.h}
+}
+\btext{.5}{.2}{.18}{Contains the class: Telegraph}
+
+\normalpage{Morse Code Array}{
+\VerbatimInput{morseCode.cpp}
+}
+\btext{.5}{.7}{.45}{Contains an array of type Morse that holds every
+character of morse code with it corresponding translation}
+
+\normalpage{Build Tree}{
+\VerbatimInput{buildTree.cpp}
+}
+\btext{.5}{.1}{.45}{Creates a Tree by:\\
+\qi{Making a pointer named root to a Tree node}
+\qi{The root is left blank}
+\qi{Then it goes through the Morse Array named table placing pieces}
+\qi{So for "A" it goes to the left followed by a right and places A}
+\qi{Then for "B" it goes right,left,left,left and places B}
+\qi{This repeats for all characters in table}
+}
+\putfig{.55}{.35}{.3}{Diagram}
+
+\normalpage{Add T Node}{
+\VerbatimInput{addTnode.cpp}
+}
+\btext{.5}{.1}{.45}{Adds a Tree Node by:\\
+\qi{Checking if the element in array table is a dot or dash}
+\qi{If it is a dot then it makes a branch to the left and adds
+a Tree node to the end}
+\qi{If it is a dash then it makes a branch to the right and adds
+a Tree node to the end}
+}
+
+\normalpage{Encode}{
+\VerbatimInput{encodeBook.cpp}
+}
+\btext{.5}{.1}{.45}{Converts text into morse code by:\\
+\qi{Turning each character to uppercase}
+\qi{Adding spaces where spaces are located}
+\qi{Looks at the Morse array and finds the matching character}
+\qi{Adds the corresponding symbols to the message and adds a space}
+}
+
+\normalpage{Decode}{
+\VerbatimInput{decodeBook.cpp}
+}
+\btext{.5}{.1}{.45}{Converts morse code to English by:\\
+\qi{Looking at each character of the message}
+\qi{If it is a dot, then it moves down the left branch}
+\qi{It it is a dash, then it moves down the right branch}
+\qi{If it is a space, then it finds the current Tree node's symbol
+and adds that to the text while adding a space and returning to root}
+\qi{Because of this when it encounters a space between words it adds
+two spaces since the current node at space will be root whose symbol
+is a space}
+}
+
+\normalpage{Destroy Tree}{
+\VerbatimInput{destroyTree.cpp}
+}
+\btext{.5}{.1}{.45}{Destroys a Tree with no parameters by:\\
+\qi{calling DestroyTree with one parameter}
+\qi{and setting root to zero}
+Desroyes a Tree with one parameter by:\\
+\qi{Checks if there is a node}
+\qi{If there is then it destroys the left and right path recursivly}
+\qi{Then it deletes the final node itself}
+}
+
+\normalpage{Lab cpp File}{
+\VerbatimInput{lab.cpp}
+}
+\btext{.5}{.2}{.45}{Executes all finctions and asks for message input
+then displays message in morse code, and re translated message}
+
+\normalpage{Test}{}
+\btext{.235}{.6}{.53}{Since the morse code table only has capital letters,
+ all letters in the translation are capital }
+\putfig{.1}{.2}{.8}{test}
+
+
+\end{document}

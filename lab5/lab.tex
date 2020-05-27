@@ -1,0 +1,110 @@
+\documentclass{ffslides}
+\ffpage{32}{\numexpr 16/9}
+\usepackage{documentation}
+\begin{document}
+
+\blankpage
+\btext{.30}{.5}{.40}{
+LAB 5: ALGORITHMS COMPARED
+BY:AMULDEEP DHILLON
+}
+
+\normalpage{Algorithms}{}
+\ctext{.1}{.2}{.8}{We will be creating a program that runs multiple 
+algorithms that sort the same array of integers.  It will time how long
+it takes for each sorting allowing the user to see which is faster.}
+\btext{.7}{.3}{.17}{We will be comparing Mergesort and Quicksort}
+
+
+\normalpage{Quicksort header file}{
+\inputsourcecode{Quicksort.h}
+}
+\btext{.5}{.3}{.18}{
+Contains the Quicksort class
+}
+
+\normalpage{Mergesort header file}{
+\inputsourcecode{Mergesort.h}
+}
+\btext{.5}{.3}{.18}{
+Contains the Mergesort class
+}
+
+\normalpage{Merge Sort Algorithm}{
+\inputsourcecode{Mergesort.cpp}
+}
+\btext{.5}{.3}{.17}{
+\qi{seperates array into pieces of either one or two elements then
+sorts those individual pieces}
+\qi{combines the sorted pieces into, eventually, one array}
+}
+
+\normalpage{Quick Sort Algorithm}{
+\inputsourcecode{Quicksort.cpp}
+}
+\btext{.5}{.3}{.21}{
+\qi{picks an elements and sorts all based on the element}
+\qi{continually repeat for each side of the original element till
+eventually there are only one element on either side therefore the array
+is organized}
+}
+
+\normalpage{Main}{
+\inputsourcecode{main.cpp}
+}
+\btext{.55}{.28}{.23}{
+\qi{records time}
+\qi{run algorithm}
+\qi{record second time}
+\qi{calculate difference}
+\qi{display difference and sorted array(commented out since it takes
+too long to display one million different elements in an array)}
+\qi{repeat for second algorithm}
+}
+
+
+\normalpage{Test}{
+\putfig{.1}{.01}{.65}{test1}
+\putfig{.1}{.5}{.65}{test2}
+\btext{.15}{.4}{.57}{These are just two out of many tests but the pattern
+is the same Quick sort is reliably faster.}
+}
+
+\normalpage{Analysis}{
+\putfig{.1}{.01}{.65}{test3}
+\putfig{.1}{.5}{.65}{test4}
+\btext{.2}{.39}{.5}{When the number of elements is increased,
+to 1 million in this case, the difference between the two algorithms
+increases, but the algorithm that is faster most of the time is Mergesort
+as opposed to the previous test with only 5 values it was Quicksort.}
+}
+
+
+
+\normalpage{Analysis pt.2}{
+\ctext{.01}{.01}{.9}{Even though Merge sort and Quick sort are both Big O of (nLog(n))
+the reason Mergesort is faster lies in the Math of Big O.  The equation for the time using
+big O of nLog(n) is Time = (number of Loops)(Logbase2(number of steps))(Time per step).
+So to compare two alorithms of type nLog(n) you simply have to look at
+the number of loops and steps, since the time per step is almost
+impossible to calculate reliably.  That is where Merge Sort shines, it has less
+numbers of steps per loop so it has a overall lower number to multiply
+with the other two, thus making it faster.  Another important point to 
+make is that Quick sort performs better when it picks a better "pivot"
+point, so it's chance of success is random, while Merge sort just needs
+elements to already be in order, or atleast partially in order to perform
+better, something more likely to happen when there are more values to 
+begin with. More elements are not useful when all that matters is where
+a randomly picked value lies on the scale.}
+\btext{.1}{.3}{.5}{It is important to note that these calculations
+do not account for best or worst cases, only the average case.\\
+In fact, Merge sort is always of Big O nLog(n) for best, worst, or average
+case.  It is Quick sort that changes and not for the better, since 
+Quick Sort's best and average cases are nLog(n) but it's worst case is
+n squared, worse than nLog(n). However, it is important to add that 
+Merge sort requires alot more memory since the array has to basically be
+copied while quick sort can just rely on the memory the array already takes up.
+}
+}
+
+\end{document}

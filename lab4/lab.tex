@@ -1,0 +1,125 @@
+\documentclass{ffslides}
+\ffpage{32}{\numexpr 16/9}
+\usepackage{documentation}
+\begin{document}
+
+\blankpage
+\btext{.32}{.5}{.31}{
+LAB 4: PIZZA QUEUES
+BY:AMULDEEP DHILLON
+}
+
+\normalpage{Queues}{
+\ctext{.1}{.1}{.8}{We will be using queues to organize both 
+pizza orders and the available drivers to deliver them.\\
+We will be using two different types of queues, one for each queue.\\ \\
+\qi{We will use a Linked List Queue for the Orders which contain
+the pizza and the address.}
+\qi{We will use a Ring Buffer Array Queue for the drivers}
+}
+\btext{.7}{.3}{.17}{These could both be done using the other type of \\
+queue. We are using both just for educational purposes.}
+}
+
+
+\normalpage{Pizza.h}{
+\inputsourcecode{pizza.h}
+}
+\btext{.5}{.3}{.25}{
+Contains all shared variables and functions
+}
+
+\normalpage{Order.h}{
+\inputsourcecode{order.h}
+}
+\btext{.5}{.3}{.15}{
+Contains the class Order
+}
+
+\normalpage{LLQueue.h}{
+\inputsourcecode{LLQueue.h}
+}
+\btext{.5}{.3}{.3}{
+Contains class LLQueue and the NODE definition
+}
+
+\normalpage{LL Queue Destructor}{
+\inputsourcecode{LLQueueDestructor.cpp}
+}
+\btext{.5}{.3}{.17}{
+Defines LLQueue's destructor
+}
+
+\normalpage{LL Queue Insert}{
+\inputsourcecode{LLQueueInsert.cpp}
+}
+\btext{.5}{.3}{.21}{
+Contains LLQueue's Insert function
+}
+
+\normalpage{LL Queue Remove}{
+\inputsourcecode{LLQueueRemove.cpp}
+}
+\btext{.5}{.3}{.23}{
+Contains LLQueue's Remove function
+}
+
+\normalpage{RB Queue.h}{
+\inputsourcecode{RBQueue.h}
+}
+\btext{.5}{.3}{.17}{
+Contains the class RBQueue
+}
+
+\normalpage{RB Queue}{
+\inputsourcecode{RBQueue.cpp}
+}
+\btext{.5}{.3}{.28}{
+Contains the definitions of RBQueue's functions
+}
+
+\normalpage{Order cb}{
+\inputsourcecode{order_cb.cpp}
+}
+\btext{.5}{.3}{.21}{
+\qi{Gets the Pizza from the GUI}
+\qi{Gets the Address from the GUI}
+\qi{Places both in an Order type}
+\qi{Inserts Order into the Queue}
+}
+
+\normalpage{Driver cb}{
+\inputsourcecode{driver_cb.cpp}
+}
+\btext{.5}{.3}{.19}{
+\qi{Gets driver from the GUI}
+\qi{Places driver into the queue}
+}
+
+\normalpage{Dispatch}{
+\inputsourcecode{dispatch.cpp}
+}
+\btext{.5}{.3}{.33}{
+Repeats the deliver function after a set amount of time
+}
+
+\normalpage{Deliver}{
+\inputsourcecode{deliver.cpp}
+}
+\btext{.6}{.3}{.20}{
+Sends the first driver and first pizza out of the queue, if they exist
+}
+
+\normalpage{Main}{
+\inputsourcecode{main.cpp}
+}
+\btext{.5}{.3}{.25}{
+Creates the GUI and executes all the other function
+}
+
+\normalpage{Test}{
+\btext{.25}{.4}{.35}{The test of the Program can be seen in the video file included}
+}
+
+
+\end{document}

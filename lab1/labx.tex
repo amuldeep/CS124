@@ -1,0 +1,83 @@
+\documentclass{ffslides}
+\ffpage{32}{\numexpr 16/9}
+\usepackage{documentation,fancyvrb}
+\begin{document}
+
+\blankpage\dtext{Dictionary program}
+\btext{.1}{.3}{.5}{
+This program works as an online dictionary.  It reads a word
+    and shows its translation.  The program loads the dictionary
+    data from the ``dict.dat'' file.
+}
+\ctext{.1}{.4}{.75}{
+{\color{blue} The objective of the lab is to review the programming techniques learned
+in cs102. \\ The sections in parenthesis suggest where in ``C++ for You++'' to review.}\\
+\qi{Building programs from source code ({\bf compile and link})(1.5)}
+\qi{Communicating with the user using the console ({\bf cin} and {\bf cout})(2.10)}
+\qi{Creating and using {\bf const} for data that will not change as program is running(3.6)}
+\qi{Using boolean values(6.3)}
+\qi{Reading data from a file into an array (or vector)(7.8)}
+\qi{Using the 3 control structures: {\bf sequence, selection, and iteration}(9.1)}
+\qi{Searching an array (or vector) for a value(9.3)}
+\qi{Using {\bf pass-by-reference} in order to have a function ``return'' more than one value(11.3)}
+\qi{Using {\bf std::string} and {\bf std::vector}(Appendix B, and 21.1)}
+\qii{The texbook shows us how to create these ourselves, but will use the built-in versions at first}
+\qi{Create documentation using \LaTeX(not in textbook)}
+{\color{blue} Chapter 2 may be enough to get you started, but as soon and as much as you can, you should read
+all of {\it Part One : chapters 1-13}. The focus of this semester is {\it Part Two : chapters 14-28}.
+}}
+
+\blankpage\dtext{Dictionary program}
+\btext{.1}{.3}{.5}{
+This program works as an online dictionary.  It reads a word
+    and shows its translation.  The program loads the dictionary
+    data from the ``dict.dat'' file.
+} 
+\putfig{.2}{.5}{.45}{lab}
+
+\blankpage\dtext{
+lab.h
+\inputsourcecode{lab.h}
+}
+\blankpage\dtext{
+lab.cpp
+\inputsourcecode{lab.cpp}
+}
+\btext{.5}{.35}{.45}{
+Load the dictionary from the file
+}
+\btext{.5}{.55}{.45}{
+Translate words
+}
+
+\blankpage\dtext{
+loadDictionary.cpp
+\inputsourcecode{loadDictionary.cpp}
+}
+\btext{.5}{.15}{.45}{
+Reads dictionary entries from a file.\\
+Returns true if successful, false if cannot open the file.
+}
+\btext{.5}{.35}{.45}{
+Open dictionary file
+}
+\btext{.5}{.55}{.45}{
+Read and display the header line
+}
+\btext{.5}{.75}{.45}{
+Read words and translations into the dictionary array
+}
+\btext{.5}{.85}{.45}{
+Report the number of entries
+}
+     
+
+\blankpage\dtext{
+foundWord.cpp
+\inputsourcecode{foundWord.cpp}
+}
+\blankpage\dtext{
+Makefile
+\VerbatimInput{Makefile}
+}
+\end{document}

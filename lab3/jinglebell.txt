@@ -1,0 +1,10 @@
+
+            system("play -qn synth .5 pluck F");
+            system("play -qn synth .5 pluck E");
+            system("play -qn synth .5 pluck E");
+            system("play -qn synth .5 pluck E");
+            system("play -qn synth .5 pluck G");
+            system("play -qn synth .5 pluck G");
+            system("play -qn synth .5 pluck F");
+            system("play -qn synth .5 pluck D");
+            system("play -qn synth 2 pluck C");}

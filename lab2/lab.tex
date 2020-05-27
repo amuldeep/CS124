@@ -1,0 +1,137 @@
+\documentclass{ffslides}
+\ffpage{32}{\numexpr 16/9}
+\usepackage{documentation}
+\begin{document}
+
+\blankpage
+\btext{.34}{.5}{.32}{
+LAB 2: LINKED LISTS
+BY:AMULDEEP DHILLON
+}
+
+\normalpage{Linked List Lab: LLL}{
+\putfig{0}{.05}{.9}{labpg1}
+}
+
+\normalpage{Linked List Lab: LLL}{
+\putfig{0}{.05}{.9}{labpg2}
+}
+
+\normalpage{Lab.h}{
+\inputsourcecode{lab.h}
+}
+\btext{.5}{.3}{.25}{
+Contains all shared variables and functions
+}
+
+\normalpage{Main}{
+\inputsourcecode{main.cpp}
+}
+\btext{.6}{.1}{.2}{
+\qi{The list in the Cities file}
+\qii{Lucknow}
+\qii{Kochi}
+\qii{Surat}
+\qii{Pune}
+\qii{Pune}
+\qii{Ahmedabad}
+\qii{Hyderabad}
+\qii{Kolkata}
+\qii{Chennai}
+\qii{Bengaluru}
+\qii{Mumbai}
+}
+
+\normalpage{Load List Using Insert}{
+\inputsourcecode{loadListUsingInsert.cpp}
+}
+\btext{.5}{.3}{.25}{
+\qi{read cities file}
+\qi{save each word in s one-at-a-time}
+}
+
+\normalpage{Insert}{
+\inputsourcecode{insert.cpp}
+}
+\putfig{.2}{.3}{.6}{lldiagram1}
+\btext{.5}{.2}{.33}{This is the linked list before we have added
+the tenth city}
+
+\normalpage{Insert part 2}{
+}
+\putfig{.1}{.1}{.8}{lldiagram2}
+\btext{.5}{.2}{.27}{This is the linked list after adding the 
+tenth city}
+
+\normalpage{Load List Directly}{
+\inputsourcecode{loadListDirectly.cpp}
+}
+\btext{.5}{.3}{.3}{
+Functions the exact same way as previous version
+}
+
+\normalpage{Insert At End}{
+\inputsourcecode{insertAtEnd.cpp}
+}
+\btext{.5}{.3}{.25}{
+\qi{point tail at end}
+\qi{move head to place newnode at end}
+}
+
+\normalpage{Load List Using Insert In Order}{
+\inputsourcecode{loadListUsingInsertInOrder.cpp}
+}
+\btext{.5}{.3}{.3}{
+Functions the exact same way as previous version
+}
+
+\normalpage{Insert In Order}{
+\inputsourcecode{insertInOrder.cpp}
+}
+\btext{.5}{.2}{.3}{
+Use while loop and comparison to travese list
+}
+\putfig{.35}{.1}{.6}{lldiagram3}
+
+\normalpage{Insert In Order part 2}{}
+\putfig{.2}{.1}{.6}{lldiagram4}
+
+\normalpage{Display List}{
+\inputsourcecode{displayList.cpp}
+}
+\putfig{.1}{.4}{.15}{backwards}
+\btext{.28}{.4}{.1}{
+(left) Notice that the cities are in reverse order from the original}
+\putfig{.4}{.4}{.15}{forwards}
+\btext{.58}{.4}{.1}{
+(left) Notice that the cities are in the same order from the original}
+\putfig{.7}{.4}{.15}{lexological}
+\btext{.88}{.4}{.1}{
+(left) Notice that the cities are in alphabetical order}
+
+\normalpage{Destroy List}{
+\inputsourcecode{destroyList.cpp}
+}
+\btext{.5}{.3}{.25}{
+\qi{makes temp pointer}
+\qi{temp points to where head points}
+\qi{head moves up}
+\qi{temp deletes previous}
+\qi{loop until head equals null}
+\qi{delete what head points at}
+}
+
+\normalpage{TEST}{}
+\putfig{.2}{.1}{.24}{lab}
+\btext{.5}{.3}{.2}{
+\qi{1st list uses insert}
+\qi{2nd list is made directly}
+\qi{3rd list is alphabetized}
+}
+
+\normalpage{TEST part 2}{}
+\putfig{.1}{.2}{.8}{memory}
+\btext{.3}{.7}{.1}{
+No memory leaks
+}
+\end{document}
